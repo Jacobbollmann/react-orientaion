@@ -13,10 +13,18 @@ function Card({globalName}) {
     setMyName('JAKE');
   }
 
+  const [count, setCount] = useState(0);
+
+  function clickChangeNumber() {
+    console.log('Test Number Change');
+    setCount(count + 1);
+    console.log(count);
+  }
+
   return (
     <div className="card">
       {/* create state to increment the count */}
-    <button >count is 0</button>
+    <button onClick={clickChangeNumber}>count is {count}</button>
     <p>{globalName ? globalName : myName}</p>
     <button onClick={clickChangeName}>Change Name</button>
     <p>
