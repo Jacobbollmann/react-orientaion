@@ -4,7 +4,7 @@
 
 import {useState} from 'react';
 
-function Card() {
+function Card({globalName}) {
   const [myName, setMyName] = useState('Default');
 
   function clickChangeName() {
@@ -15,8 +15,9 @@ function Card() {
 
   return (
     <div className="card">
+      {/* create state to increment the count */}
     <button >count is 0</button>
-    <p>{myName}</p>
+    <p>{globalName ? globalName : myName}</p>
     <button onClick={clickChangeName}>Change Name</button>
     <p>
       Edit <code>src/App.jsx</code> and save to test HMR
