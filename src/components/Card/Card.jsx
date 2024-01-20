@@ -1,8 +1,6 @@
 // To use state we need hooks
-//import React from 'react';
-//const useState = React.useState;
-
 import {useState} from 'react';
+import Button from '@mui/material/Button';
 
 function Card({globalName}) {
   const [myName, setMyName] = useState('Default');
@@ -24,9 +22,23 @@ function Card({globalName}) {
   return (
     <div className="card">
       {/* create state to increment the count */}
-    <button onClick={clickChangeNumber}>count is {count}</button>
+    <Button 
+      variant="contained" 
+      size="small"
+      color="secondary"
+      onClick={clickChangeNumber}
+      >
+        Count is {count}
+      </Button>
     <p>{globalName ? globalName : myName}</p>
-    <button onClick={clickChangeName}>Change Name</button>
+
+    <Button 
+      variant="outlined"
+      size="medium"
+      onClick={clickChangeName}
+      >
+        Change Name
+      </Button>
     <p>
       Edit <code>src/App.jsx</code> and save to test HMR
     </p>
